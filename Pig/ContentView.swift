@@ -35,7 +35,6 @@ struct ContentView: View {
                             }
                         }
                         .buttonStyle(CustomButtonStyle())
-                        
                         Button("Hold") {
                             gameScore += turnScore
                             endTurn()
@@ -47,10 +46,8 @@ struct ContentView: View {
                             }
                         }
                         .buttonStyle(CustomButtonStyle())
-                        
                     }
                     CustomText(text: "Game Score: \(gameScore)")
-                    
                     NavigationLink("How to Play", destination: InstructionsView())
                         .font(Font.custom("Marker Felt", size: 24))
                         .padding()
@@ -59,12 +56,10 @@ struct ContentView: View {
                         gameScore = 0
                     }
                     .font(Font.custom("Marker Felt", size: 24))
-                    
                     Spacer()
                 }
             }
             .alert(isPresented: $gameOver, content: {
-                
                 Alert(title: Text("You won the game!"), dismissButton:
                         .destructive(Text("Play again"), action: {
                             withAnimation {
@@ -125,31 +120,22 @@ struct InstructionsView: View {
                 Image("King Frisco").resizable().frame(width: 200, height: 250)
                 CustomText(text: "Dog")
                 VStack(alignment: .leading) {
-                    
                     Text("In the game of Dog, players take individual turns. Each turn, a player repeatedly rolls a single die until either a pig is rolled or the player decides to \"hold\".")
                         .padding()
-                    
                     Text("If a player rolls a dog, they score nothing and it is the next player's turn.")
-                    
                         .padding()
-                    
                     Text("If the player rolls any other number, it is added to their turn total, and the player's turn continues.")
                         .padding()
-                    
                     Text("If the player chooses to \"hold\", their turn total is added to the game score, and it becomes the next player's turn.")
-                    
                         .padding()
-                    
                     Text("A player wins the game when the game score becomes 100 or more on their turn.")
                         .padding()
-                    
                 }
                 Spacer()
             }
         }
     }
 }
-
 #Preview {
     ContentView()
 }
