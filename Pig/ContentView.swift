@@ -4,9 +4,7 @@
 //
 //  Created by Carson Payne on 10/2/24.
 //
-
 import SwiftUI
-
 struct ContentView: View {
     @State private var turnScore = 0
     @State private var gameScore = 0
@@ -18,8 +16,8 @@ struct ContentView: View {
             ZStack {
                 Color.gray.opacity(0.7).ignoresSafeArea()
                 VStack {
-                    Image("King Frisco").resizable().frame(width: 200, height: 250)
-                    CustomText(text: "Dog")
+                    Image("pig").resizable().frame(width: 200, height: 200)
+                    CustomText(text: "Pig")
                     Image("pips \(randomValue)")
                         .resizable()
                         .frame(width: 150, height: 150)
@@ -69,7 +67,6 @@ struct ContentView: View {
                         }))
             })
         }
-        
     }
     func endTurn() {
         turnScore = 0
@@ -117,12 +114,12 @@ struct InstructionsView: View {
         ZStack {
             Color.gray.opacity(0.7).ignoresSafeArea()
             VStack {
-                Image("King Frisco").resizable().frame(width: 200, height: 250)
-                CustomText(text: "Dog")
+                Image("pig").resizable().frame(width: 200, height: 200)
+                CustomText(text: "Pig")
                 VStack(alignment: .leading) {
-                    Text("In the game of Dog, players take individual turns. Each turn, a player repeatedly rolls a single die until either a pig is rolled or the player decides to \"hold\".")
+                    Text("In the game of Pig, players take individual turns. Each turn, a player repeatedly rolls a single die until either a pig is rolled or the player decides to \"hold\".")
                         .padding()
-                    Text("If a player rolls a dog, they score nothing and it is the next player's turn.")
+                    Text("If a player rolls a pig, they score nothing and it is the next player's turn.")
                         .padding()
                     Text("If the player rolls any other number, it is added to their turn total, and the player's turn continues.")
                         .padding()
@@ -139,4 +136,3 @@ struct InstructionsView: View {
 #Preview {
     ContentView()
 }
-
